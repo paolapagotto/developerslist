@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     
     var arrayUsers = [User]()
     
-    let user1 = User(name: "Tim Berners-Lee", image: "user1.png")
-    let user2 = User(name: "Bjarne Stroustrup", image: "user2.png")
-    let user3 = User(name: "Linus Torvalds", image: "user3.png")
-    let user4 = User(name: "Ken Thompson", image: "user4.png")
-    let user5 = User(name: "Dennis Ritchie", image: "user5.png")
+    let user1 = User(name: "Tim Berners-Lee", email: "user@email.com", image: "user1.png")
+    let user2 = User(name: "Bjarne Stroustrup", email: "user@email.com", image: "user2.png")
+    let user3 = User(name: "Linus Torvalds", email: "user@email.com", image: "user3.png")
+    let user4 = User(name: "Ken Thompson", email: "user@email.com", image: "user4.png")
+    let user5 = User(name: "Dennis Ritchie", email: "user@email.com", image: "user5.png")
     
     
     
@@ -45,8 +45,6 @@ extension ViewController: UITableViewDelegate {
         print(user)
     }
     
-
-    
 }
 
 
@@ -67,7 +65,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MyCustomCell
-        cell.setup(title: arrayUsers[indexPath.row].name, image: arrayUsers[indexPath.row].image)
+        cell.setup(title: arrayUsers[indexPath.row].name, email: arrayUsers[indexPath.row].email, image: arrayUsers[indexPath.row].image)
         return cell
     }
     

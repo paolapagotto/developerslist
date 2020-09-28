@@ -13,11 +13,14 @@ class MyCustomCell: UITableViewCell {
     @IBOutlet weak var customCellUser: UIView!
     
     @IBOutlet weak var labelUser: UILabel!
+    @IBOutlet weak var labelEmail: UILabel!
+    @IBOutlet weak var imageViewUser: UIImageView!
     
     
-    func setup(title: String, image: String) {
+    func setup(title: String, email: String, image: String) {
         labelUser.text = title
-        imageView?.image = UIImage(named: image)
+        labelEmail.text = email
+        imageViewUser.image = UIImage(named: image)
     }
     
     override func awakeFromNib() {
